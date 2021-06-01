@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Title</title>
+    <style>
+    .in{
+    	width:60px;
+    	height:60px;
+    	border:3px solid pink;
+    	border-radius:10px;
+    	outline:none;
+    	text-align:center;
+    	font-size:30px;
+    	margin:5px 5px 5px 5px;
+    	color:brown;
+    }
+    div{
+    	text-align:center;
+    	padding:29px;
+    }
+    button {
+    	border:3px solid brown;
+    	width:80px;
+    	height:40px;
+    	border-radius:20px;
+    	background-color:white;
+    	margin:10px 10px 10px 10px;
+    	font-size:17px;
+    	outline:none;
+    }
+    button:hover{
+    	background-color:brown;
+    	color:white;
+    }
+    li button{
+    	width:120px;
+    	margin:0;
+    	background-color:pink;
+    	border:none;
+    }
+    body{
+    	text-align:center;
+    	margin:0;
+    	padding:0;
+    }
+    header{
+    	background-color: pink;
+    	border:solid pink;
+    }
+    ul{
+    	list-style:none;
+    	display:flex;
+    }
+    nav{
+    	background-color:pink;
+    	border:solid pink;
+    	height:35px;
+    }
+    #two{
+    	display:none;
+    }
+    b{color: brown;font-size:20px}
+    </style>
+    </head>
+    <body>
+    <header>
+    <h2>Determiner Solver</h2>
+    </header>
+    
+    <nav>
+    <ul>
+    	<li style="flex:1;"><button onclick="th()">3*3</button></li>
+    	<li style="flex:2;"><button onclick="tw()">2*2</button></li>
+    </ul>
+    </nav>
+    
+    
+    <div id="three">
+    <h3>Enter the matrix:</h3>
+        <input class="in" id="A" type="number">
+        <input class="in" id="B" type="number">
+        <input class="in" id="C" type="number"><br>
+        <input class="in" id="D" type="number">
+        <input class="in" id="E" type="number">
+        <input class="in" id="F" type="number"><br>
+        <input class="in" id="G" type="number">
+        <input class="in" id="H" type="number">
+        <input class="in" id="I" type="number"><br>
+<button onclick="three()">submit</button><br>
+<br>
+<strong>Determiner=</strong><b id="deter3"></b></div>
+
+
+
+
+<div id="two">
+    <h3>Enter the matrix:</h3>
+        <input class="in" id="a" type="number">
+        <input class="in" id="b" type="number"><br>
+        <input class="in" id="c" type="number">
+        <input class="in" id="d" type="number"><br>
+<button onclick="two()">submit</button><br>
+<br>
+<strong>Determiner=</strong><b id="deter2"></b></div>
+
+
+
+
+<script>
+function three(){
+var A,B,C,D,E,F,G,H,I;
+
+A=document.getElementById('A').value;
+B=document.getElementById('B').value;
+C=document.getElementById('C').value;
+D=document.getElementById('D').value;
+E=document.getElementById('E').value;
+F=document.getElementById('F').value;
+G=document.getElementById('G').value;
+H=document.getElementById('H').value;
+I=document.getElementById('I').value;
+
+var deter= A*(E*I-H*F)-B*(D*I-G*F)+C*(D*H-G*E);
+document.getElementById('deter3').innerHTML=deter;
+}
+
+
+function two(){
+var a,b,c,d;
+
+a=document.getElementById('a').value;
+b=document.getElementById('b').value;
+c=document.getElementById('c').value;
+d=document.getElementById('d').value;
+
+var deter= a*d-b*c;
+document.getElementById('deter2').innerHTML=deter;
+}
+
+
+function th(){
+document.getElementById('three').style.display="block";
+document.getElementById('two').style.display="none";
+}
+
+function tw(){
+document.getElementById('three').style.display="none";
+document.getElementById('two').style.display="block";
+}
+
+</script>
+    </body>
+</html>
