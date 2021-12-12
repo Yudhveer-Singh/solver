@@ -109,3 +109,10 @@ function cube(){
    
    result= "A³<br>"+oa+"..."+ob+"..."+oc+"<br>"+ox+"..."+oy+"..."+oz+"<br>"+ol+"..."+om+"..."+on+"<br>";
 }
+$("input").keypress(function(e){
+   if(e.which == 13){
+      var v= this.id;
+      var k= $("#"+v).next().trigger("focus");
+      //console.log(k);
+   }
+});
