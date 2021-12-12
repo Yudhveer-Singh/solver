@@ -1,0 +1,22 @@
+body{
+}
+input{
+   width:40px;
+   height:40px;
+   margin: 20px;
+   padding: 10px;
+   border: 2px solid black;
+}
+#ribbon button{
+   padding:16px 16px;
+   background: #863895;
+   color: white;
+   font-size: 14px;
+   border-radius: 24px;
+   border: none;
+   transition-duration: 1s;
+   outline: none;
+}
+#ribbon button:hover{
+   border-radius: 4px;
+}
