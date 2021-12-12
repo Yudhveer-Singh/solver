@@ -1,15 +1,17 @@
-body{
+:root{
+   --main_dark: #863895;
+   --main: #ea80fc;
 }
 input{
    width:40px;
    height:40px;
-   margin: 20px;
+   margin: 12px;
    padding: 10px;
    border: 2px solid black;
 }
 #ribbon button{
    padding:16px 16px;
-   background: #863895;
+   background: var(--main_dark);
    color: white;
    font-size: 14px;
    border-radius: 24px;
@@ -19,4 +21,21 @@ input{
 }
 #ribbon button:hover{
    border-radius: 4px;
+}
+#matrix input{
+   border: 2px solid var(--main_dark);
+   border-radius: 16px;
+   font-size: 18px;
+   outline: none;
+   transition-duration: 0.4s;
+}
+#matrix input:hover{
+   border-radius: 4px;
+}
+#matrix{
+   width: fit-content;
+   margin:0 auto;
+}
+#output{
+   height: fit-content;
 }

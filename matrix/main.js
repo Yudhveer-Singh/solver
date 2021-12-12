@@ -1,4 +1,3 @@
-
 var out=$("#output");
 var result="";
 $("#sq").click(function(){
