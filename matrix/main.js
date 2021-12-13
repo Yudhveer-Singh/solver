@@ -2,39 +2,23 @@ var out=$("#output");
 var result="";
 $("#sq").click(function(){
    out.empty();
-   /*var a=value("a11");
-   var b=value("a12");
-   var c=value("a13");
-   var x=value("a21");
-   var y=value("a22");
-   var z=value("a23");
-   var l=value("a31");
-   var m=value("a32");
-   var n=value("a33");*/
-   
-   
-
    square();
    out.html(result);
-   //console.log(_a+"..."+_b+"..."+_c+"<br>"+_x+"..."+_y+"..."+_z+"<br>"+_l+"..."+_m+"..."+_n+"<br>");
+});
+$("#deter").click(function(){
+   out.empty();
+   determinant();
+   out.html("|A|<br>"+result);
+});
+$("#inverse").click(function(){
+   out.empty();
+   inverse();
+   out.html(result);
 });
 $("#cube").click(function(){
    out.empty();
-   /*var a=value("a11");
-   var b=value("a12");
-   var c=value("a13");
-   var x=value("a21");
-   var y=value("a22");
-   var z=value("a23");
-   var l=value("a31");
-   var m=value("a32");
-   var n=value("a33");*/
-   
-   
-
    cube();
    out.html(result);
-   //console.log(_a+"..."+_b+"..."+_c+"<br>"+_x+"..."+_y+"..."+_z+"<br>"+_l+"..."+_m+"..."+_n+"<br>");
 });
 $("#reset").on("click",function(){
    _value("a11");
@@ -74,7 +58,7 @@ function square(/*a,b,c,x,y,z,l,m,n*/){
    var _m=l*b+m*y+n*m;
    var _n=l*c+m*z+n*n;
    
-   result= "A²<br>"+_a+"..."+_b+"..."+_c+"<br>"+_x+"..."+_y+"..."+_z+"<br>"+_l+"..."+_m+"..."+_n+"<br>";
+   result= "A<sup>2</sup><br>"+_a+"..."+_b+"..."+_c+"<br>"+_x+"..."+_y+"..."+_z+"<br>"+_l+"..."+_m+"..."+_n+"<br>";
 }
 function cube(){
    var a=value("a11");
@@ -107,7 +91,44 @@ function cube(){
    var om=_l*b+_m*y+_n*m;
    var on=_l*c+_m*z+_n*n;
    
-   result= "A³<br>"+oa+"..."+ob+"..."+oc+"<br>"+ox+"..."+oy+"..."+oz+"<br>"+ol+"..."+om+"..."+on+"<br>";
+   result= "A<sup>3</sup><br>"+oa+"..."+ob+"..."+oc+"<br>"+ox+"..."+oy+"..."+oz+"<br>"+ol+"..."+om+"..."+on+"<br>";
+}
+function determinant(){
+   var a=value("a11");
+   var b=value("a12");
+   var c=value("a13");
+   var x=value("a21");
+   var y=value("a22");
+   var z=value("a23");
+   var l=value("a31");
+   var m=value("a32");
+   var n=value("a33");
+   
+   result= a*(y*n-z*m)-b*(x*n-z*l)+c*(x*m-y*l);
+}
+function inverse(){
+   var a=value("a11");
+   var b=value("a12");
+   var c=value("a13");
+   var x=value("a21");
+   var y=value("a22");
+   var z=value("a23");
+   var l=value("a31");
+   var m=value("a32");
+   var n=value("a33");
+   
+   var d= a*(y*n-z*m)-b*(x*n-z*l)+c*(x*m-y*l);
+   var _a=(y*n-z*m)/d;
+   var _b=(c*m-b*n)/d;
+   var _c=(b*z-c*y)/d;
+   var _x=(z*l-x*n)/d;
+   var _y=(a*n-c*l)/d;
+   var _z=(c*x-a*z)/d;
+   var _l=(x*m-y*l)/d;
+   var _m=(b*l-a*m)/d;
+   var _n=(a*y-b*x)/d;
+   
+   result= "A<sup>-1</sup><br>"+_a+"..."+_b+"..."+_c+"<br>"+_x+"..."+_y+"..."+_z+"<br>"+_l+"..."+_m+"..."+_n+"<br>";
 }
 $("input").keypress(function(e){
    if(e.which == 13){
@@ -115,4 +136,7 @@ $("input").keypress(function(e){
       var k= $("#"+v).next().trigger("focus");
       //console.log(k);
    }
+});
+$("input").click(function(){
+   this.value="";
 });

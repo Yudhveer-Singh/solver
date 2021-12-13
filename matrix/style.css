@@ -11,12 +11,14 @@ input{
 }
 #ribbon button{
    padding:16px 16px;
+   margin: 2px;
+   min-width: 50px;
    background: var(--main_dark);
    color: white;
    font-size: 14px;
    border-radius: 24px;
    border: none;
-   transition-duration: 1s;
+   transition-duration: 0.4s;
    outline: none;
 }
 #ribbon button:hover{
@@ -24,20 +26,23 @@ input{
 }
 #matrix input{
    border: 2px solid var(--main_dark);
-   border-radius: 16px;
-   font-size: 18px;
+   border-radius: 20px;
+   font-size: 18px;;
    outline: none;
    transition-duration: 0.4s;
 }
-#matrix input:hover{
+#matrix input:focus{
    border-radius: 4px;
 }
 #matrix{
    width: fit-content;
-   margin:0 auto;
+   margin: 20px auto 0 auto;
    display:grid;
    grid-template-columns: auto auto auto;
 }
 #output{
    height: fit-content;
+}
+sup{
+   font-size: 10px;
 }
